@@ -1,16 +1,34 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Station = ({ station }) => {
-  return <li>{station.nimi}</li>
+  const style = {
+    padding: 3,
+    margin: 5,
+  }
+  return (
+    <li style={style}>
+      <Link to={`/stations/${station.id}`}>{station.nimi}</Link>
+    </li>
+  )
 }
 
 const Stations = () => {
-  const stations = useSelector(({ journeys, stations }) => stations)
+  const stations = useSelector(({ stations }) => stations)
+  const filter = useSelector(({ filter }) => filter)
+  const filteredStations = stations
+    .filter(
+      (station) =>
+        station.nimi.toLowerCase().includes(filter.toLowerCase()) ||
+        station.namn.toLowerCase().includes(filter.toLowerCase()) ||
+        station.name.toLowerCase().includes(filter.toLowerCase())
+    )
+    .sort((a, b) => a.nimi.localeCompare(b.nimi))
 
   return (
     <ul>
-      {stations.map((station) => (
+      {filteredStations.map((station) => (
         <Station key={station.id} station={station} />
       ))}
     </ul>

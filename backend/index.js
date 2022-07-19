@@ -32,17 +32,33 @@ app.get('/api/stations', (req, res) => {
 
 app.get('/api/journeys', (req, res) => {
   Journey.find({})
-    .limit(10000)
+    .limit(5000)
     .then((journeys) => {
       res.json(journeys)
     })
 })
 
-app.get('/api/stations/:id', (req, res) => {
-  Station.findById(req.params.id).then((station) => {
-    console.log(station)
-    res.json(station)
+app.get('/api/stations/:id', async (req, res) => {
+  const station = await Station.findById(req.params.id)
+  const from = await Journey.countDocuments({
+    departureStationName: station.nimi,
   })
+  const to = await Journey.countDocuments({
+    returnStationName: station.nimi,
+  })
+  const stationInfo = {
+    nimi: station.nimi,
+    namn: station.namn,
+    osoite: station.osoite,
+    address: station.address,
+    kaupunki: station.kaupunki,
+    stad: station.stad,
+    x: station.x,
+    y: station.y,
+    journeysFrom: from,
+    journeysTo: to,
+  }
+  res.json(stationInfo)
 })
 
 app.get('/api/journeys/:id', (req, res) => {
