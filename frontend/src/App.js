@@ -6,23 +6,12 @@ import { setJourneys } from './reducers/journeyReducer'
 import { useDispatch } from 'react-redux'
 import { setStations } from './reducers/stationReducer'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Homeview from './components/Home'
 import Stationlist from './components/Stationlist'
 import Journeylist from './components/Journeylist'
 import Filter from './components/Filter'
 import StationDetails from './components/StationDetails'
 import NavigationBar from './components/NavigationBar'
-
-const Home = () => {
-  const style = {
-    padding: 7,
-  }
-
-  return (
-    <div style={style}>
-      <h2> Helsinki city bike app </h2>
-    </div>
-  )
-}
 
 const App = () => {
   const dispatch = useDispatch()
@@ -41,7 +30,7 @@ const App = () => {
           <NavigationBar />
         </div>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Homeview />} />
           <Route
             path="/stations"
             element={

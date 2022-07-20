@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { setStationFilter } from '../reducers/stationFilterReducer'
+import Form from 'react-bootstrap/Form'
 
 const Filter = () => {
   const dispatch = useDispatch()
@@ -15,9 +16,14 @@ const Filter = () => {
   }
 
   return (
-    <div style={style}>
-      search by name <input onChange={handleChange} />
-    </div>
+    <Form style={style}>
+      <Form.Label>Search station by name</Form.Label>
+      <Form.Control
+        type="text"
+        placeholder="e.g. Hanasaari"
+        onChange={handleChange}
+      />
+    </Form>
   )
 }
 
