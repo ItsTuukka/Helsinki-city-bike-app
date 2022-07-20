@@ -14,7 +14,7 @@ const Station = ({ station }) => {
   )
 }
 
-const Stations = () => {
+const Stationlist = () => {
   const stations = useSelector(({ stations }) => stations)
   const filter = useSelector(({ filter }) => filter)
   const filteredStations = stations
@@ -35,4 +35,4 @@ const Stations = () => {
   )
 }
 
-export default Stations
+export default Stationlist

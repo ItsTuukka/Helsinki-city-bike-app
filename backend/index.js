@@ -32,7 +32,7 @@ app.get('/api/stations', (req, res) => {
 
 app.get('/api/journeys', (req, res) => {
   Journey.find({})
-    .limit(5000)
+    .limit(200)
     .then((journeys) => {
       res.json(journeys)
     })

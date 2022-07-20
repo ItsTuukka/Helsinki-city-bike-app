@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 const NavigationBar = () => {
   const padding = {
     padding: 7,
+    marginBottom: 10,
   }
 
   return (
