@@ -1,5 +1,5 @@
 import React from 'react'
-import bikestation from '../assets/bike_image.jpg'
+import bikestation from '../images/bike_image.jpg'
 
 const Homeview = () => {
   const style = {

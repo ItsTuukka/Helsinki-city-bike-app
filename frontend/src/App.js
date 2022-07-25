@@ -8,7 +8,7 @@ import { setStations } from './reducers/stationReducer'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Homeview from './components/Home'
 import Stationlist from './components/Stationlist'
-import Journeylist from './components/Journeylist'
+import JourneyTable from './components/JourneyTable'
 import Filter from './components/Filter'
 import StationDetails from './components/StationDetails'
 import NavigationBar from './components/NavigationBar'
@@ -41,7 +41,7 @@ const App = () => {
             }
           />
           <Route path="/stations/:id" element={<StationDetails />} />
-          <Route path="/journeys" element={<Journeylist />} />
+          <Route path="/journeys" element={<JourneyTable />} />
         </Routes>
       </div>
     </Router>
