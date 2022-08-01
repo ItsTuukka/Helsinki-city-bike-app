@@ -21,8 +21,7 @@ const Stationlist = () => {
     .filter(
       (station) =>
         station.nimi.toLowerCase().includes(filter.toLowerCase()) ||
-        station.namn.toLowerCase().includes(filter.toLowerCase()) ||
-        station.name.toLowerCase().includes(filter.toLowerCase())
+        station.namn.toLowerCase().includes(filter.toLowerCase())
     )
     .sort((a, b) => a.nimi.localeCompare(b.nimi))
 
