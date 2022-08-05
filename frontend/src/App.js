@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Homeview from './components/Home'
 import Stationlist from './components/Stationlist'
 import JourneyTable from './components/JourneyTable'
-import Filter from './components/Filter'
 import StationDetails from './components/StationDetails'
 import NavigationBar from './components/NavigationBar'
 
@@ -30,7 +29,6 @@ const App = () => {
             path="/stations"
             element={
               <>
-                <Filter />
                 <Stationlist />
               </>
             }
