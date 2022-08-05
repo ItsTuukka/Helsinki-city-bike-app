@@ -31,8 +31,11 @@ app.get('/api/stations', (req, res) => {
 })
 
 app.get('/api/journeys', (req, res) => {
-  Journey.find({})
-    .limit(200)
+  const pageNumber = req.query.page - 1
+  Journey.find()
+    .sort({ _id: 1 })
+    .skip(pageNumber * 100)
+    .limit(100)
     .then((journeys) => {
       res.json(journeys)
     })

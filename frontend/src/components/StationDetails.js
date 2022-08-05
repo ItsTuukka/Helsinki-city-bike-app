@@ -46,7 +46,7 @@ const InfoList = ({ station, padding }) => {
         <br />
         Average distance: <i>{station.avgDistanceTo} km</i>
         <br />
-        Most popular return stations:
+        Most popular departure stations:
         <ul>
           {station.mostPopularDepartureStations.map((name) => (
             <li key={name}>

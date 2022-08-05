@@ -1,8 +1,6 @@
 import React from 'react'
 import { useEffect } from 'react'
-import journeyService from './services/journey'
 import stationService from './services/station'
-import { setJourneys } from './reducers/journeyReducer'
 import { useDispatch } from 'react-redux'
 import { setStations } from './reducers/stationReducer'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -15,9 +13,6 @@ import NavigationBar from './components/NavigationBar'
 
 const App = () => {
   const dispatch = useDispatch()
-  useEffect(() => {
-    journeyService.getAll().then((journeys) => dispatch(setJourneys(journeys)))
-  }, [dispatch])
 
   useEffect(() => {
     stationService.getAll().then((stations) => dispatch(setStations(stations)))

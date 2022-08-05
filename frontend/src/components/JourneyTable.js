@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { setJourneys } from '../reducers/journeyReducer'
+import React, { useEffect, useState } from 'react'
+import { Pagination } from '@mui/material'
+import journeyService from '../services/journey'
 
 const JourneyDetails = ({ journeys, columns }) => {
   return (
@@ -9,18 +9,6 @@ const JourneyDetails = ({ journeys, columns }) => {
         return (
           <tr key={journey.id}>
             {columns.map(({ accessor }) => {
-              if (accessor === 'distance') {
-                return (
-                  <td key={accessor}>
-                    {(journey[accessor] / 1000).toFixed(2)}
-                  </td>
-                )
-              }
-              if (accessor === 'duration') {
-                return (
-                  <td key={accessor}>{(journey[accessor] / 60).toFixed(2)}</td>
-                )
-              }
               return <td key={accessor}>{journey[accessor]}</td>
             })}
           </tr>
@@ -66,14 +54,23 @@ const TableHeader = ({ columns, handleSorting }) => {
 }
 
 const JourneyTable = () => {
-  const dispatch = useDispatch()
-  const journeys = useSelector(({ journeys }) => journeys)
+  const [page, setPage] = useState(1)
+  const [journeys, setJourneys] = useState([])
   const columns = [
     { label: 'Departure Station', accessor: 'departureStationName' },
     { label: 'Return Station', accessor: 'returnStationName' },
     { label: 'Distance (km)', accessor: 'distance' },
     { label: 'Duration (min)', accessor: 'duration' },
   ]
+
+  useEffect(() => {
+    journeyService.getAll(page).then((journeys) => setJourneys(journeys))
+  }, [page])
+
+  const handlePageChange = (e, value) => {
+    setPage(value)
+  }
+
   const handleSorting = (sortField, sortOrder) => {
     if (
       sortField === 'departureStationName' ||
@@ -85,7 +82,7 @@ const JourneyTable = () => {
           (sortOrder === 'asc' ? 1 : -1)
         )
       })
-      dispatch(setJourneys(sorted))
+      setJourneys(sorted)
     }
     if (sortField === 'distance' || sortField === 'duration') {
       const sorted = [...journeys].sort((a, b) => {
@@ -95,16 +92,26 @@ const JourneyTable = () => {
           return b[sortField] - a[sortField]
         }
       })
-      dispatch(setJourneys(sorted))
+      setJourneys(sorted)
     }
   }
 
   return (
-    <table className="table">
-      <caption>Journey data, column headers are sortable.</caption>
-      <TableHeader {...{ columns, handleSorting }} />
-      <JourneyDetails {...{ journeys, columns }} />
-    </table>
+    <div>
+      <br />
+      <Pagination
+        count={18300}
+        variant="outlined"
+        page={page}
+        onChange={handlePageChange}
+      />
+      <br />
+      <table className="table">
+        <caption>Journey data, column headers are sortable.</caption>
+        <TableHeader {...{ columns, handleSorting }} />
+        <JourneyDetails {...{ journeys, columns }} />
+      </table>
+    </div>
   )
 }
 
