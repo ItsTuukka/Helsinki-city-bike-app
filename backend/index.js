@@ -20,10 +20,6 @@ mongoose
     console.log('error connecting to MongoDb:', err.message)
   })
 
-app.get('/', (req, res) => {
-  res.send('<h1>Welcome<h1>')
-})
-
 app.get('/api/stations', (req, res) => {
   Station.find({}).then((stations) => {
     res.json(stations)

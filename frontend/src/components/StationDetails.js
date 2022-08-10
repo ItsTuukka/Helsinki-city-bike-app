@@ -124,6 +124,7 @@ const StationDetails = () => {
           variant="outline-primary"
           onClick={handleChange}
           value="finnish"
+          id="finnish"
         >
           Finnish
         </Button>
@@ -131,6 +132,7 @@ const StationDetails = () => {
           variant="outline-primary"
           onClick={handleChange}
           value="swedish"
+          id="swedish"
         >
           Swedish
         </Button>

@@ -10,6 +10,12 @@ const stationSchema = new mongoose.Schema({
   stad: String,
   x: String,
   y: String,
+  journeysFrom: Number,
+  journeysTo: Number,
+  avgDistanceFrom: Number,
+  avgDistanceTo: Number,
+  mostPopularReturnStations: Array,
+  mostPopularDepartureStations: Array,
 })
 
 stationSchema.set('toJSON', {

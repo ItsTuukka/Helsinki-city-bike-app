@@ -16,7 +16,7 @@ const Filter = () => {
   }
 
   return (
-    <Form style={style}>
+    <Form style={style} id="stationFilter">
       <Form.Label>Search station by name</Form.Label>
       <Form.Control
         type="text"

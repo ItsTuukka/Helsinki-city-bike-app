@@ -10,8 +10,10 @@ const Station = ({ station }) => {
     margin: 5,
   }
   return (
-    <li style={style}>
-      <Link to={`/stations/${station.id}`}>{station.nimi}</Link>
+    <li style={style} className="station">
+      <Link to={`/stations/${station.id}`} id="stationLink">
+        {station.nimi}
+      </Link>
     </li>
   )
 }
