@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Pagination } from '@mui/material'
-import Filter from './Filter'
+import Filter from './StationFilter'
 
 const Station = ({ station }) => {
   const style = {
@@ -19,7 +19,7 @@ const Station = ({ station }) => {
 const Stationlist = () => {
   const [page, setPage] = useState(1)
   const stations = useSelector(({ stations }) => stations)
-  const filter = useSelector(({ filter }) => filter)
+  const filter = useSelector(({ stationFilter }) => stationFilter)
   const filteredStations = stations
     .filter(
       (station) =>

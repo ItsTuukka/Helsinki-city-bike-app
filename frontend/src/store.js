@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import stationReducer from './reducers/stationReducer'
 import stationFilterReducer from './reducers/stationFilterReducer'
+import journeyFilterReducer from './reducers/journeyFilterReducer'
 
 const store = configureStore({
   reducer: {
     stations: stationReducer,
-    filter: stationFilterReducer,
+    stationFilter: stationFilterReducer,
+    journeyFilter: journeyFilterReducer,
   },
 })
 

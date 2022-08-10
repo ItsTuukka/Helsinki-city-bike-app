@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Pagination } from '@mui/material'
 import journeyService from '../services/journey'
+import Filter from './JourneyFilter'
 
 const JourneyDetails = ({ journeys, columns }) => {
   return (
@@ -56,6 +58,7 @@ const TableHeader = ({ columns, handleSorting }) => {
 const JourneyTable = () => {
   const [page, setPage] = useState(1)
   const [journeys, setJourneys] = useState([])
+  const filter = useSelector(({ journeyFilter }) => journeyFilter)
   const columns = [
     { label: 'Departure Station', accessor: 'departureStationName' },
     { label: 'Return Station', accessor: 'returnStationName' },
@@ -66,6 +69,14 @@ const JourneyTable = () => {
   useEffect(() => {
     journeyService.getAll(page).then((journeys) => setJourneys(journeys))
   }, [page])
+
+  const filteredJourneys = journeys.filter(
+    (journey) =>
+      journey.departureStationName
+        .toLowerCase()
+        .includes(filter.toLowerCase()) ||
+      journey.returnStationName.toLowerCase().includes(filter.toLowerCase())
+  )
 
   const handlePageChange = (e, value) => {
     setPage(value)
@@ -106,10 +117,11 @@ const JourneyTable = () => {
         onChange={handlePageChange}
       />
       <br />
+      <Filter />
       <table className="table">
         <caption>Journey data, column headers are sortable.</caption>
         <TableHeader {...{ columns, handleSorting }} />
-        <JourneyDetails {...{ journeys, columns }} />
+        <JourneyDetails journeys={filteredJourneys} columns={columns} />
       </table>
     </div>
   )

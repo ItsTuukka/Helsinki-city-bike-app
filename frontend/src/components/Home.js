@@ -23,7 +23,7 @@ const Homeview = () => {
           You can search a station by name and click one to get additional
           information regarding that station.
           <br />
-          There is also a list of journeys represented as a data table.
+          There is also a list of journeys represented as a sortable data table.
         </b>
       </div>
     </div>
