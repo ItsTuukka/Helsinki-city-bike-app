@@ -21,5 +21,13 @@ Weighing the upsides and the downsides and taking my original idea in to conside
 
 ## Backend
 
-The backend uses Node.js and Express. Mongoose is used to interact with the MongoDB database.
+The backend uses Node.js and Express for the server side and Mongoose is used to interact with the MongoDB database.
 <br>
+Being such a simple backend and having so little routes, I left it all in the index.js file and decided not to refactoring.
+<br>
+<br>
+The backend is hosted in the cloud via Heroku service at https://citybike-app.herokuapp.com/ (api/stations or api/journeys). With the right id there is also a single station/journey view.
+
+## Frontend
+
+
