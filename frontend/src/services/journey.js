@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:3001/api/journeys'
+const baseUrl = 'https://citybike-app.herokuapp.com/api/journeys'
 
 const getAll = async (page) => {
   const response = await axios.get(baseUrl, {
