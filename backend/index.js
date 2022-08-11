@@ -6,7 +6,7 @@ const cors = require('cors')
 const Journey = require('./models/journey')
 const Station = require('./models/station')
 
-const PORT = ck.PORT
+const PORT = ck.PORT || 3001
 const url = ck.MONGODB_URL
 
 app.use(cors())
