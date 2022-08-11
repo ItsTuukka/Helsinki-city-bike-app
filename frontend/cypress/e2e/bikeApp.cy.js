@@ -25,8 +25,7 @@ describe('routes', () => {
 
 describe('stationlist', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000')
-    cy.get('#stations').click()
+    cy.visit('http://localhost:3000/stations')
   })
 
   it('right amount of stations per page', () => {
@@ -34,9 +33,7 @@ describe('stationlist', () => {
   })
 
   it('changing page works', () => {
-    cy.get('button').then((buttons) => {
-      cy.wrap(buttons[2]).click()
-    })
+    cy.get('button').eq(2).click()
     cy.get('.station').should('have.length', 50)
     cy.contains('Haagan tori')
   })
@@ -48,9 +45,7 @@ describe('stationlist', () => {
   })
 
   it('single station is clickable', () => {
-    cy.get('#stationLink').then((links) => {
-      cy.wrap(links[0]).click()
-    })
+    cy.get('#stationLink').eq(0).click()
     cy.contains('Average distance: 2.88 km')
   })
 })
@@ -75,5 +70,41 @@ describe('single station view', () => {
     cy.get('#finnish').click()
     cy.contains('Alakiventie')
     cy.contains('Alakiventie 4, Helsinki')
+  })
+})
+
+describe('journeytable', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/journeys')
+  })
+
+  it('right amount of journeys per table', () => {
+    cy.get('.tablerow').should('have.length', 100)
+  })
+
+  it('changing page works', () => {
+    cy.get('button').eq(2).click()
+    cy.wait(1000) //has to wait for the database to fetch new journeys
+    cy.get('.tablerow').should('have.length', 100)
+    cy.get('tr td:nth-child(1)').eq(0).contains('Piispansilta')
+  })
+
+  it('columns are sortable', () => {
+    cy.get('tr td:nth-child(1)').eq(0).contains('Laajalahden aukio')
+    cy.get('th').eq(0).click()
+    cy.get('tr td:nth-child(1)').eq(0).contains('Albertinkatu')
+    cy.get('th').eq(0).click()
+    cy.get('tr td:nth-child(1)').eq(0).contains('Ympyrätalo')
+    cy.get('tr td:nth-child(3)').eq(0).contains('2.72')
+    cy.get('th').eq(2).click()
+    cy.get('tr td:nth-child(3)').eq(0).contains('0.01')
+    cy.get('th').eq(2).click()
+    cy.get('tr td:nth-child(3)').eq(0).contains('6.45')
+  })
+
+  it('searching works', () => {
+    cy.get('#journeyFilter').type('Hakaniemi')
+    cy.get('tr td:nth-child(1)').eq(0).contains('Hakaniemi')
+    cy.get('.tablerow').should('have.length', 2)
   })
 })

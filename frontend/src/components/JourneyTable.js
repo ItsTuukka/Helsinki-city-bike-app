@@ -9,7 +9,7 @@ const JourneyDetails = ({ journeys, columns }) => {
     <tbody>
       {journeys.map((journey) => {
         return (
-          <tr key={journey.id}>
+          <tr key={journey.id} className="tablerow">
             {columns.map(({ accessor }) => {
               return <td key={accessor}>{journey[accessor]}</td>
             })}

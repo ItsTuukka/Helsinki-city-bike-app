@@ -16,7 +16,7 @@ const Filter = () => {
   }
 
   return (
-    <Form style={style}>
+    <Form style={style} id="journeyFilter">
       <Form.Label>Search journey by departure or return station</Form.Label>
       <Form.Control
         type="text"
