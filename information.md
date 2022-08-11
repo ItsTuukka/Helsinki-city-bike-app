@@ -9,3 +9,9 @@ The database in question being MongoDB. The free version of MongoDB could only h
 <br>
 <br>
 Since from the start I planned on not doing endpoints for adding new stations or journyes, so I made the decision to do calculations for the addition information about a single station in the script. This approach has upsides and downsides.
+<br>
+<br>
+The upsides being faster and more fluid user experience, since I do not have to make queries for information about a single station, since the information is already in the database. Also all of the calculations have been made with the full journey data, and not the imcomplete database data.
+<br>
+<br>
+The downsides 
