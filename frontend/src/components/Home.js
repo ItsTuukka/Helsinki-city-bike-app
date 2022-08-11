@@ -24,6 +24,7 @@ const Homeview = () => {
           information regarding that station.
           <br />
           There is also a list of journeys represented as a sortable data table.
+          Journyes can be searched by the departure or return station name
         </b>
       </div>
     </div>
