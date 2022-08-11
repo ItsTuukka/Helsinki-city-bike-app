@@ -79,6 +79,10 @@ Features:
 - All the table columns are sortable, in ascending or descending order
   - Little arrow showing current sorting for clarity
 
+## Final thoughts
 
-
+Overall I am pretty happy on the end result. Of course there are things that could have been done differently, even better, but for being the most broad fullstack project I have done, I am satisfied. Many new skills learned and received more experince on old ones, so that is a victory on my book.
+<br>
+<br>
+Thank you for reading and being interested!
 
