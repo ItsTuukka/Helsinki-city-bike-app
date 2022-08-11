@@ -16,7 +16,7 @@ npm install
 npm start
 ```
 
-The backend is running in Heroku, so running that locally is not needed.
+The backend is running in the cloud (Heroku), so running that locally is not needed.
 
 ## E2E tests
 
