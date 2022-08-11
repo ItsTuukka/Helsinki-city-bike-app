@@ -4,7 +4,7 @@ This file contains some information and thoughts about the project.
 
 ## Data from files to database
 
-In the backend/data folder there is a python script get_data.py that gets data from 4 .csv files. It then transforms and validates that data and sends it to a database.
+In the backend/data folder there is a python script get_data.py that gets data from 4 .csv files (which are too big for github). It then transforms and validates that data and sends it to a database.
 The database in question being MongoDB. The free version of MongoDB could only hold 1.8 million journyes from the original 3.1 million.
 <br>
 <br>
@@ -16,4 +16,10 @@ The upsides being faster and more fluid user experience, since I do not have to 
 <br>
 The downsides for making the calculations in the scipt are that it runs quite slow, even thought it is only ran once. Also if the need to expand the project arrives and new endpoints for adding new stations is needed, it will be more difficult and slower.
 <br>
+<br>
+Weighing the upsides and the downsides and taking my original idea in to consideration, I am happy with my approach.
+
+## Backend
+
+The backend uses Node.js and Express. Mongoose is used to interact with the MongoDB database.
 <br>
