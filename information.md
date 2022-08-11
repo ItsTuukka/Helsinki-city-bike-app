@@ -14,4 +14,6 @@ Since from the start I planned on not doing endpoints for adding new stations or
 The upsides being faster and more fluid user experience, since I do not have to make queries for information about a single station, since the information is already in the database. Also all of the calculations have been made with the full journey data, and not the imcomplete database data.
 <br>
 <br>
-The downsides 
+The downsides for making the calculations in the scipt are that it runs quite slow, even thought it is only ran once. Also if the need to expand the project arrives and new endpoints for adding new stations is needed, it will be more difficult and slower.
+<br>
+<br>
