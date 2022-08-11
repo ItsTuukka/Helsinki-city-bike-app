@@ -46,8 +46,21 @@ Just some information about the features of the app.
 This view has a list of all the stations. The stations are fetched from the backend using and saved using redux.
 <br>
 Features:
-- Pagination, every page has 50 stations except the last one.
-- Searching, every station is searchable by its Finnish or Swedish name, even if its not on that current page.
+- Pagination, every page has 50 stations except the last one
+- Searching, every station is searchable by its Finnish or Swedish name, even if its not on that current page
   - Searching happens on change, so even writing one letter makes a search
 - Every station is clickable to get additional information on that station
+
+### Single station view
+
+This view has additional information on any given station. Information includes:
+- Station name
+- Station address
+- Buttons to choose the language in which the station name and adress are shown
+- Total number of journeys startin from the station
+- Total number of journeys ending at the station
+- The average distance of a journey starting from the station
+- The average distance of a journey ending at the station
+- Top 5 most popular return stations for journeys starting from the station
+- Top 5 most popular departure stations for journeys ending at the station
 
