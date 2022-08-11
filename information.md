@@ -47,7 +47,8 @@ This view has a list of all the stations. The stations are fetched from the back
 <br>
 Features:
 - Pagination, every page has 50 stations except the last one
-- Searching, every station is searchable by its Finnish or Swedish name, even if its not on that current page
+- Searching, every station is searchable by its Finnish or Swedish name
+  - Searches all the stations, even if its not on that current page
   - Searching happens on change, so even writing one letter makes a search
 - Every station is clickable to get additional information on that station
 
@@ -63,4 +64,21 @@ This view has additional information on any given station. Information includes:
 - The average distance of a journey ending at the station
 - Top 5 most popular return stations for journeys starting from the station
 - Top 5 most popular departure stations for journeys ending at the station
+
+I also tried to get station location on map with Google Maps Platform, but could not get it to work to save my life (code is still up and commented in the project).
+
+### Journeys
+
+This view shows a list of journeys presented as a datable. Journyes are fetched as needed from the backend/database.
+<br>
+Features:
+- Pagination, every page has the data of 100 journeys
+- Searching, journeys can be searched with the departure or return station name
+  - Only searches data shown on page
+  - Searching happens on change, so even writing one letter makes a search
+- All the table columns are sortable, in ascending or descending order
+  - Little arrow showing current sorting for clarity
+
+
+
 
