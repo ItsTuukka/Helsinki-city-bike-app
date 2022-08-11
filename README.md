@@ -31,4 +31,4 @@ Cypress will open, click E2E Testing, select chrome as your testing browser and 
 
 ## Information
 
-To find more detailed information about the app, head over here.
+To find more detailed information about the app, head over [here](https://github.com/ItsTuukka/Helsinki-city-bike-app/blob/main/information.md).
