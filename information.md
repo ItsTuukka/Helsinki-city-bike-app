@@ -4,7 +4,7 @@ This file contains some information and thoughts about the project.
 
 ## Data from files to database
 
-In the backend/data folder there is a python script get_data.py that gets data from 4 .csv files (which are too big for github). It then transforms and validates that data and sends it to a database.
+In the backend/data folder there is a python script get_data.py that gets data from four .csv files (which are too big for github). It then transforms and validates that data and sends it to a database.
 The database in question being MongoDB. The free version of MongoDB could only hold 1.8 million journyes from the original 3.1 million.
 <br>
 <br>
@@ -32,4 +32,22 @@ The backend is hosted in the cloud via Heroku service at https://citybike-app.he
 
 Frontend is a react-app, done with React.js and Javascript in combination with some addtional libraries.
 <br>
-There are also e2e test with cypress, more on those in the README.md
+There are also e2e test with cypress, more on those in the [README.md](https://github.com/ItsTuukka/Helsinki-city-bike-app/blob/main/README.md).
+<br>
+<br>
+There are four main views in the app.
+
+### Home
+
+Just some information about the features of the app.
+
+### Stations
+
+This view has a list of all the stations. The stations are fetched from the backend using and saved using redux.
+<br>
+Features:
+- Pagination, every page has 50 stations except the last one.
+- Searching, every station is searchable by its Finnish or Swedish name, even if its not on that current page.
+  - Searching happens on change, so even writing one letter makes a search
+- Every station is clickable to get additional information on that station
+
