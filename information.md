@@ -30,4 +30,6 @@ The backend is hosted in the cloud via Heroku service at https://citybike-app.he
 
 ## Frontend
 
-
+Frontend is a react-app, done with React.js and Javascript in combination with some addtional libraries.
+<br>
+There are also e2e test with cypress, more on those in the README.md
