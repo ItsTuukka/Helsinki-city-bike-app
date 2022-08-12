@@ -1,6 +1,8 @@
 # Information about the project
 
 This file contains some information and thoughts about the project.
+<br>
+The app has been created and tested on a Ubuntu-based system.
 
 ## Data from files to database
 
