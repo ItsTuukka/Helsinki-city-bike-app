@@ -2,6 +2,8 @@
 
 ## To run the app
 
+Node.js and npm needed to run the project!
+
 1. Clone the project to your computer.
 
 2. Head over to the frontend folder in your terminal.
