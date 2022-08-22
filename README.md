@@ -42,7 +42,7 @@ The backend is running in the cloud (Heroku), so running that locally is not nee
 ## E2E tests
 
 The app also features e2e test, made with cypress.
-To run those, use the command (in the frontend folder):
+To run those, have the frontend running and use the command (in the frontend folder):
 
 ```
 npm run cypress:open
