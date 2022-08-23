@@ -2,6 +2,7 @@
 
 In this app you can view the list of city bike stations in Helsinki and Espoo.
 You can search a station by name and click one to get additional information regarding that station.
+<br>
 There is also a list of journeys represented as a sortable data table. Journeys can be searched by the departure or return station name.
 
 **Table of contents**
