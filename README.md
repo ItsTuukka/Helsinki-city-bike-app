@@ -126,7 +126,7 @@ I also tried to get station location on map with Google Maps Platform, but could
 
 #### Journeys
 
-This view shows a list of journeys presented as a datable. Journyes are fetched as needed from the backend/database.
+This view shows a list of journeys presented as a table. Journyes are fetched as needed from the backend/database.
 <br>
 Features:
 
