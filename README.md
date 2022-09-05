@@ -98,7 +98,7 @@ Just some information about the features of the app.
 
 #### Stations
 
-This view has a list of all the stations. The stations are fetched from the backend using and saved using redux.
+This view has a list of all the stations. The stations are fetched from the backend and saved using redux.
 <br>
 Features:
 
